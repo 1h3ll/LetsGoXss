@@ -9,6 +9,18 @@ import os
 import re
 import argparse
 import concurrent.futures
+from threading import Lock
+import time
+import requests
+
+# Global lock for synchronized printing
+print_lock = Lock()
+
+def safe_print(message):
+    with print_lock:
+        print(message)
+        time.sleep(0.5)  # Add a 1-second delay for smoother, spaced-out output
+
 
 # Initialize colorama
 init(autoreset=True)
@@ -112,32 +124,52 @@ def test_payloads(urls, payloads, inject_into_paths=False):
             else:
                 url_payload.append(injected_payload)
     return url_payload
-
+    
 def attack(test_url):
     driver = setup_browser()
+
+    # Default values for status code and content length
+    status_code = "N/A"
+    content_length = "N/A"
+
+    # Fetch status code and content length
+    try:
+        response = requests.get(test_url, timeout=10)
+        status_code = response.status_code
+        content_length = response.headers.get('Content-Length') or len(response.content)
+    except requests.exceptions.RequestException as e:
+        safe_print(Fore.RED + f"Failed to fetch URL details: {test_url}. Error: {str(e)}")
+        return
+
+    # Selenium handling for alerts
     try:
         driver.get(test_url)
-        WebDriverWait(driver, 15).until(EC.alert_is_present())  # Timeout to 15 seconds
+        WebDriverWait(driver, 3).until(EC.alert_is_present())
         alert = driver.switch_to.alert
-        alert.accept()  # Close the alert
-        print(Fore.GREEN + f"Alert Found: {test_url}")
-    except TimeoutException:
-        print(Fore.RED + f"Timed out: {test_url}")
-    except NoAlertPresentException:
-        print(Fore.YELLOW + f"No alert: {test_url}")
+        alert.accept()
+        safe_print(
+            Fore.GREEN + f"Alert Found:" + Fore.YELLOW + f" {test_url}" +
+            Fore.WHITE + f" [Status Code:" + Fore.CYAN + f" {status_code}" +
+            Fore.WHITE + f"] [Content Length:" + Fore.CYAN + f" {content_length}" + Fore.WHITE + f"]"
+        )
+    except (TimeoutException, NoAlertPresentException):
+        safe_print(
+            Fore.RED + f"No alert:" + Fore.BLUE + f" {test_url}" +
+            Fore.WHITE + f" [Status Code:" + Fore.CYAN + f" {status_code}" +
+            Fore.WHITE + f"] [Content Length:" + Fore.CYAN + f" {content_length}" + Fore.WHITE + f"]"
+        )
     except WebDriverException as e:
-        # Handle specific errors like DNS resolution failures
         if "ERR_NAME_NOT_RESOLVED" in str(e):
-            print(Fore.RED + f"DNS resolution failed for: {test_url}")
+            safe_print(Fore.RED + f"DNS resolution failed for: {test_url}")
         else:
-            print(Fore.RED + f"WebDriverException occurred: {str(e)}")
-            print(Fore.RED + f"Timed out: {test_url}")
+            safe_print(Fore.RED + f"WebDriverException: {str(e)}")
     except UnexpectedAlertPresentException:
-        print(Fore.RED + "Unexpected alert encountered during execution.")
+        safe_print(Fore.RED + "Unexpected alert during execution.")
     except Exception as e:
-        print(e)
+        safe_print(Fore.RED + f"An error occurred: {str(e)}")
     finally:
         driver.quit()
+
 
 def main():
     parser = argparse.ArgumentParser(description='Test XSS payloads.')
@@ -155,13 +187,13 @@ def main():
     payload_count = len(payloads)
 
     # Display the count before starting
-    print(f"{Fore.YELLOW}Number of URLs: {url_count}")
-    print(f"{Fore.YELLOW}Number of payloads: {payload_count}")
+    print(f"{Fore.MAGENTA}Number of URLs: {url_count}")
+    print(f"{Fore.MAGENTA}Number of payloads: {payload_count}")
     print("Please give me atleast 30 sec....")
 
     # Run payload testing
     injected_payloads = test_payloads(urls, payloads, inject_into_paths=args.path)
-    
+
     # Use thread argument or default to 10
     thread_count = args.thread
     with concurrent.futures.ThreadPoolExecutor(max_workers=thread_count) as executor:

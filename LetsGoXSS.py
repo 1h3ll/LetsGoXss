@@ -19,7 +19,7 @@ print_lock = Lock()
 def safe_print(message):
     with print_lock:
         print(message)
-        time.sleep(0.5)  # Add a 1-second delay for smoother, spaced-out output
+        time.sleep(0.5)  # Add a 0.5-second delay for smoother, spaced-out output
 
 
 # Initialize colorama
@@ -144,7 +144,7 @@ def attack(test_url):
     # Selenium handling for alerts
     try:
         driver.get(test_url)
-        WebDriverWait(driver, 3).until(EC.alert_is_present())
+        WebDriverWait(driver, 10).until(EC.alert_is_present())
         alert = driver.switch_to.alert
         alert.accept()
         safe_print(

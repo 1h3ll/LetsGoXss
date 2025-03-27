@@ -124,7 +124,7 @@ def test_payloads(urls, payloads, inject_into_paths=False):
             else:
                 url_payload.append(injected_payload)
     return url_payload
-    
+
 def attack(test_url):
     driver = setup_browser()
 
@@ -147,6 +147,19 @@ def attack(test_url):
         WebDriverWait(driver, 10).until(EC.alert_is_present())
         alert = driver.switch_to.alert
         alert.accept()
+
+        # If alert is found, send URL to Telegram
+        bot_token = ''  # Replace with your bot token
+        chat_id = ''  # Replace with your chat ID
+        telegram_url = f"https://api.telegram.org/bot{bot_token}/sendMessage?chat_id={chat_id}&text={test_url}"
+
+        try:
+            telegram_response = requests.get(telegram_url)
+            if telegram_response.status_code != 200:
+                safe_print(Fore.RED + f"Failed to send URL to Telegram. Status code: {telegram_response.status_code}")
+        except requests.exceptions.RequestException as e:
+            safe_print(Fore.RED + f"Failed to send message to Telegram: {str(e)}")
+
         safe_print(
             Fore.GREEN + f"Alert Found:" + Fore.YELLOW + f" {test_url}" +
             Fore.WHITE + f" [Status Code:" + Fore.CYAN + f" {status_code}" +
@@ -201,3 +214,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+           

